@@ -1,0 +1,22 @@
+@model EditStatusRequest
+
+@{
+    ViewData["Title"] = "Edit status";
+}
+
+<div class="container">
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id">
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input type="text" class="form-control" asp-for="Title">
+        </div>
+        <div class="form-group">
+            <label asp-for="Icon"></label>
+            <input type="text" class="form-control" asp-for="Icon">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-link" value="Save changes">
+        </div>
+    </form>
+</div>

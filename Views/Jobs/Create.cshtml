@@ -1,0 +1,35 @@
+﻿@model Kinoshka.Models.Entities.Job
+
+@{
+    ViewData["Title"] = "Create new job";
+}
+
+<div class="container">
+    <form asp-action="Create" asp-controller="Jobs" method="post">
+        <input type="hidden" value="@Model.ProjectId" name="ProjectId" id="ProjectId">
+        @* <div class="form-group"> *@
+        @*     <label for="ProjectId">Project: </label> *@
+        @*     <select name="ProjectId" id="ProjectId"> *@
+        @*         @foreach (var project in (IEnumerable<Project>) ViewBag.Projects) *@
+        @*         { *@
+        @*             <option value="@project.Id">@project.Title</option> *@
+        @*         } *@
+        @*     </select> *@
+        @* </div> *@
+        <div class="form-group">
+            <label for="Title">Title: </label>
+            <input type="text" class="form-control" name="Title" id="Title" value="@Model.Title">
+        </div>
+        <div class="form-group">
+            <label for="Description">Description: </label>
+            <textarea class="form-control" name="Description", id="Description" rows="2" cols="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Deadline">Deadline: </label>
+            <input class="form-control" name="Deadline", id="Deadline" type="date"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-link">Create</button>
+        </div>
+    </form>
+</div>

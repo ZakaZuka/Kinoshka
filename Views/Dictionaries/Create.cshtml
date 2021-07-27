@@ -1,0 +1,21 @@
+@model CreateStatusRequest
+
+@{
+    ViewData["Title"] = "Create status";
+}
+
+<div class="container">
+    <form asp-controller="Dictionaries" asp-action="Create" method="post">
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input type="text" asp-for="Title" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Icon"></label>
+            <input type="text" asp-for="Icon" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-link">
+        </div>
+    </form>
+</div>

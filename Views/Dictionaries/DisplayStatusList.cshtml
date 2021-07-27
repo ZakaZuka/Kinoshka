@@ -1,0 +1,26 @@
+@model IEnumerable<Kinoshka.Models.Entities.JobStatus>
+
+@{
+    ViewData["Title"] = "Status list dictionary";
+}
+
+<h2>Status list dictionary</h2>
+
+<div class="container">
+    <a asp-controller="Dictionaries" asp-action="Create" class="btn btn-link">Create</a>
+    <table>
+        @foreach (var status in Model)
+        {
+            <tr>
+                <td>@status.Title</td>
+                <td><i class="@status.Icon" aria-hidden="true"></i></td>
+                <td>
+                    <form asp-controller="Dictionaries" asp-action="Delete" asp-route-id="@status.Id">
+                        <a asp-controller="Dictionaries" asp-action="Edit" asp-route-id="@status.Id" class="btn btn-link">Edit</a>
+                        <input type="submit" class="btn btn-danger" value="Delete">
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
